@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101b32">
+<meta name="description" content="Sermon Library — คลังคำเทศนาและบทเรียนพระคัมภีร์ไทย–อังกฤษ">
+<link rel="manifest" href="manifest.json">
+<title>Sermon Library</title>
+<style>
+:root{--navy:#101b32;--navy2:#1b2a49;--gold:#c9a45c;--cream:#f7f4ec;--ink:#1d2638;--muted:#6c7484;--line:#e4e0d7;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif}
+header{background:linear-gradient(120deg,var(--navy),var(--navy2));color:white;padding:24px 18px 28px;border-radius:0 0 24px 24px}
+.wrap{max-width:1000px;margin:auto}.brand{display:flex;gap:12px;align-items:center}.logo{width:46px;height:46px;border:1px solid #c9a45c;border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:25px}
+h1{font-size:22px;margin:0 0 4px;letter-spacing:.2px}header p{margin:0;color:#d9deea;font-size:13px}.hero{margin-top:24px}.hero h2{font-size:27px;line-height:1.2;margin:0 0 9px}.hero p{font-size:14px;line-height:1.6;max-width:560px}
+main{max-width:1000px;margin:auto;padding:20px 16px 90px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.search{flex:1;min-width:200px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:white}
+select,.langbtn{padding:12px;border:1px solid var(--line);border-radius:12px;background:white;color:var(--ink);font-size:14px}.chips{display:flex;gap:8px;overflow:auto;padding:2px 0 16px}.chip{border:1px solid var(--line);background:white;border-radius:999px;padding:9px 13px;white-space:nowrap;cursor:pointer}.chip.active{background:var(--navy);color:white;border-color:var(--navy)}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:8px 0 14px}.sectionhead h3{margin:0;font-size:18px}.count{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat( auto-fit,minmax(225px,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 3px 12px #17213a08}.cover{min-height:142px;background:linear-gradient(135deg,#14213b,#2c3d5d);color:var(--gold);padding:18px;display:flex;flex-direction:column;justify-content:space-between}.cover .tag{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#e7d4aa}.cover .symbol{font-size:34px;opacity:.9}.cover .verse{font-family:Georgia,serif;font-size:15px;color:#fff}.cardbody{padding:15px;display:flex;flex-direction:column;flex:1}.card h4{font-size:17px;margin:0 0 5px;line-height:1.35}.english{font-size:12px;color:var(--muted);margin-bottom:9px}.desc{font-size:13px;color:#586173;line-height:1.55;margin:0 0 15px;flex:1}.cardfoot{display:flex;justify-content:space-between;align-items:center;gap:8px}.price{font-weight:750;color:var(--navy)}button{font:inherit;cursor:pointer}.primary{border:0;background:var(--navy);color:white;padding:11px 13px;border-radius:10px;font-size:13px}.secondary{border:1px solid var(--line);background:white;padding:10px 12px;border-radius:10px}.empty{padding:35px;text-align:center;color:var(--muted);background:white;border-radius:15px}
+footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;font-size:12px;color:var(--muted)}
+.modalback{position:fixed;inset:0;background:#0b1429a8;display:none;align-items:flex-end;justify-content:center;padding:0;z-index:10}.modalback.open{display:flex}.modal{background:var(--cream);border-radius:22px 22px 0 0;width:100%;max-width:700px;max-height:90vh;overflow:auto;padding:22px}.modalhead{display:flex;justify-content:space-between;gap:10px}.close{border:0;background:#e8e3d8;border-radius:50%;width:36px;height:36px;font-size:20px}.modal h2{font-size:23px;margin:10px 0 5px}.modal h3{font-size:15px;margin-top:22px}.modal p,.modal li{font-size:14px;line-height:1.7}.note{background:#eee8d9;border-radius:12px;padding:12px;font-size:12px;line-height:1.6;margin-top:14px}.modalactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:28px;padding:10px;z-index:5}.bottom button{border:0;background:none;color:var(--muted);font-size:12px}.bottom button span{display:block;font-size:19px;margin-bottom:2px}
+@media(min-width:700px){header{padding:28px 28px 34px}.hero h2{font-size:34px}.modalback{align-items:center;padding:20px}.modal{border-radius:22px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand"><div class="logo">✦</div><div><h1>SERMON LIBRARY</h1><p>คำเทศนา • บทเรียนกลุ่มย่อย • สร้างสาวก</p></div></div>
+  <div class="hero"><h2>พระวจนะที่พร้อมแบ่งปัน<br>เพื่อการรับใช้ที่เกิดผล</h2><p>คลังสื่อพระคัมภีร์สองภาษา สำหรับศิษยาภิบาล ผู้นำกลุ่มย่อย และผู้รับใช้</p></div>
+</div></header>
+<main>
+  <div class="toolbar">
+    <input class="search" id="search" placeholder="ค้นหาคำเทศนา ข้อพระคัมภีร์ หรือหัวข้อ..." aria-label="ค้นหาสินค้า">
+    <select id="language" aria-label="ภาษา"><option value="th">ภาษาไทย</option><option value="en">English</option><option value="both">ไทย / English</option></select>
+  </div>
+  <div class="chips" id="chips">
+    <button class="chip active" data-cat="all">ทั้งหมด</button>
+    <button class="chip" data-cat="sermon">คำเทศนา</button>
+    <button class="chip" data-cat="smallgroup">บทเรียนกลุ่มย่อย</button>
+    <button class="chip" data-cat="discipleship">คู่มือสร้างสาวก</button>
+  </div>
+  <div class="sectionhead"><h3 id="listTitle">สินค้าแนะนำ</h3><span class="count" id="count"></span></div>
+  <div class="grid" id="products"></div>
+  <div class="note"><strong>หมายเหตุสำหรับเจ้าของร้าน:</strong> นี่คือรุ่นต้นแบบที่ทำงานบนเบราว์เซอร์ ขณะนี้ยังไม่มีระบบชำระเงินจริง การส่ง PDF อัตโนมัติ หรือฐานข้อมูลผู้ซื้อ กรุณาเปลี่ยนข้อมูลตัวอย่างและตรวจสอบสิทธิ์เนื้อหาก่อนเปิดขาย</div>
+</main>
+<footer>© <span id="year"></span> Sermon Library · ใช้พระคัมภีร์อย่างสัตย์ซื่อ ดูแลผู้เรียนด้วยความรัก</footer>
+<div class="bottom">
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span>⌂</span>หน้าหลัก</button>
+<button onclick="showSaved()"><span>♡</span>รายการบันทึก</button>
+<button onclick="showOrderInfo()"><span>▣</span>การสั่งซื้อ</button>
+</div>
+<div class="modalback" id="modalback" role="dialog" aria-modal="true"><div class="modal" id="modal"></div></div>
+<script>
+const products=[
+{id:1,cat:'sermon',title:'เมื่อเราเกิดความผิดพลาด',en:'When We Make Mistakes',verse:'มาระโก 14:27–31, 66–72',price:149,symbol:'✦',desc:'โครงคำเทศนาเพื่อช่วยผู้เชื่อเรียนรู้จากความล้มเหลวและกลับมาหาพระเยซู',sections:['บทนำและบริบทพระคัมภีร์','ประเด็นหลัก 3 ประการ','ตัวอย่างประกอบคำเทศนา','คำถามตอบสนองและคำอธิษฐาน'],englishSections:['Introduction and biblical context','Three main points','Illustration','Response questions and prayer']},
+{id:2,cat:'sermon',title:'วางใจพระเจ้าในเวลายากลำบาก',en:'Trusting God in Difficult Times',verse:'มัทธิว 6:25–34',price:149,symbol:'☼',desc:'โครงคำเทศนาเรื่องการวางใจพระเจ้าแทนความกระวนกระวาย พร้อมการประยุกต์ใช้',sections:['ความกังวลของมนุษย์','พระลักษณะของพระบิดา','แสวงหาแผ่นดินของพระเจ้าก่อน','คำถามและคำอธิษฐาน'],englishSections:['Human anxiety','The character of the Father','Seek God’s kingdom first','Reflection and prayer']},
+{id:3,cat:'smallgroup',title:'การสร้างกลุ่มย่อยที่เติบโต',en:'Building a Growing Small Group',verse:'กิจการ 2:42–47',price:299,symbol:'⌂',desc:'บทเรียน 4 ครั้งสำหรับผู้นำกลุ่มย่อย เน้นพระวจนะ ความสัมพันธ์ การดูแล และการประกาศ',sections:['ครั้งที่ 1: เติบโตในพระวจนะ','ครั้งที่ 2: สร้างความสัมพันธ์ที่ไว้วางใจ','ครั้งที่ 3: ดูแลกันอย่างเป็นรูปธรรม','ครั้งที่ 4: เชิญชวนและสร้างสาวก'],englishSections:['Session 1: Grow in the Word','Session 2: Build trusting relationships','Session 3: Care practically','Session 4: Invite and make disciples']},
+{id:4,cat:'discipleship',title:'คู่มือเริ่มต้นสร้างสาวก',en:'Discipleship Starter Guide',verse:'มัทธิว 28:19–20',price:199,symbol:'✧',desc:'แนวทางเริ่มต้นสำหรับผู้เชื่อที่ต้องการเติบโตและช่วยผู้อื่นติดตามพระเยซู',sections:['เป้าหมายการสร้างสาวก','การอ่านพระคัมภีร์และอธิษฐาน','การติดตามผลอย่างสม่ำเสมอ','แผนปฏิบัติ 30 วัน'],englishSections:['The purpose of discipleship','Bible reading and prayer','Consistent follow-up','30-day action plan']}
+];
+let activeCat='all', saved=JSON.parse(localStorage.getItem('sl_saved')||'[]'), savedMode=false;
+const $=id=>document.getElementById(id);
+function categoryLabel(cat){return ({sermon:'คำเทศนา',smallgroup:'กลุ่มย่อย',discipleship:'สร้างสาวก'})[cat]}
+function filtered(){const q=$('search').value.trim().toLowerCase();const lang=$('language').value;return products.filter(p=>(activeCat==='all'||p.cat===activeCat)&&(!savedMode||saved.includes(p.id))&&(!q||[p.title,p.en,p.verse,p.desc,...p.sections].join(' ').toLowerCase().includes(q)))}
+function render(){const list=filtered();$('count').textContent=`${list.length} รายการ`; $('listTitle').textContent=savedMode?'รายการที่บันทึก':'สินค้าแนะนำ';$('products').innerHTML=list.length?list.map(p=>`<article class="card"><div class="cover"><div class="tag">${categoryLabel(p.cat)} · BILINGUAL</div><div class="symbol">${p.symbol}</div><div class="verse">${p.verse}</div></div><div class="cardbody"><h4>${p.title}</h4><div class="english">${p.en}</div><p class="desc">${p.desc}</p><div class="cardfoot"><span class="price">฿${p.price}</span><button class="primary" onclick="details(${p.id})">ดูรายละเอียด</button></div></div></article>`).join(''):`<div class="empty">ไม่พบรายการที่ตรงกับการค้นหา</div>`}
+function details(id){const p=products.find(x=>x.id===id);const lang=$('language').value;const title=lang==='en'?p.en:p.title;const subtitle=lang==='en'?p.title:p.en;const sections=lang==='en'?p.englishSections:p.sections;$('modal').innerHTML=`<div class="modalhead"><div><div class="count">${categoryLabel(p.cat)} · ${p.verse}</div><h2>${title}</h2><div class="english">${subtitle}</div></div><button class="close" onclick="closeModal()" aria-label="ปิด">×</button></div><p>${p.desc}</p><h3>${lang==='en'?'What is included':'เนื้อหาภายใน'}</h3><ul>${sections.map(s=>`<li>${s}</li>`).join('')}</ul><div class="note">ราคาแนะนำสำหรับทดสอบตลาด: <strong>฿${p.price}</strong><br>ราคานี้เป็นตัวอย่าง สามารถปรับก่อนเปิดขายจริงได้</div><div class="modalactions"><button class="primary" onclick="requestProduct(${p.id})">${lang==='en'?'Prepare this product':'เตรียมสินค้านี้สำหรับขาย'}</button><button class="secondary" onclick="toggleSave(${p.id})">${saved.includes(p.id)?'♥ บันทึกแล้ว':'♡ บันทึกไว้'}</button><button class="secondary" onclick="closeModal()">ปิด</button></div>`;$('modalback').classList.add('open')}
+function closeModal(){$('modalback').classList.remove('open')}
+function toggleSave(id){saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];localStorage.setItem('sl_saved',JSON.stringify(saved));render();details(id)}
+function requestProduct(id){const p=products.find(x=>x.id===id);const msg=`ช่วยสร้างไฟล์สินค้าดิจิทัลสำหรับ Sermon Library เรื่อง “${p.title} / ${p.en}” จาก ${p.verse} เป็นเอกสารไทย–อังกฤษพร้อมใช้ขาย โดยมีโครงสร้างชัดเจน ตรวจสอบข้อพระคัมภีร์ และคำแนะนำเรื่องลิขสิทธิ์`;window.location.href='mailto:?subject='+encodeURIComponent('เตรียมสินค้า Sermon Library')+'&body='+encodeURIComponent(msg);alert('ปุ่มนี้เป็นตัวอย่าง: เปิดอีเมลได้หากตั้งค่าไว้ กรุณากลับมาที่ ChatGPT แล้วส่งชื่อสินค้าที่ต้องการให้สร้างไฟล์จริง')}
+function showSaved(){savedMode=true;activeCat='all';document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('active',b.dataset.cat==='all'));render();window.scrollTo({top:300,behavior:'smooth'})}
+function showOrderInfo(){$('modal').innerHTML=`<div class="modalhead"><h2>การสั่งซื้อ</h2><button class="close" onclick="closeModal()">×</button></div><p>รุ่นทดลองนี้ยังไม่รับชำระเงินจริง</p><ol><li>ผู้ซื้อเลือกสินค้าและแจ้งคำสั่งซื้อ</li><li>เจ้าของร้านตรวจสอบการชำระเงินผ่านช่องทางที่ประกาศไว้</li><li>ส่งลิงก์ PDF ให้ผู้ซื้อด้วยตนเอง</li></ol><p>ก่อนเปิดขายจริง ต้องเพิ่มช่องทางรับเงิน เงื่อนไขการคืนเงิน และวิธีส่งไฟล์ที่ปลอดภัย</p><div class="modalactions"><button class="primary" onclick="closeModal();alert('ขั้นต่อไป: สร้างระบบสั่งซื้อและส่ง PDF')">เข้าใจแล้ว</button></div>`;$('modalback').classList.add('open')}
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{activeCat=b.dataset.cat;savedMode=false;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()}));
+$('search').addEventListener('input',()=>{savedMode=false;render()});$('language').addEventListener('change',render);$('modalback').addEventListener('click',e=>{if(e.target===$('modalback'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('year').textContent=new Date().getFullYear();render();
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body></html>
